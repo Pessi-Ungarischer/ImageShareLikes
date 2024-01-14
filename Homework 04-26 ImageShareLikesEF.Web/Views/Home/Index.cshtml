@@ -1,0 +1,28 @@
+﻿@using ImageShareLikes.Data;
+@using ImageShareLikes.Web.Models
+@model IndexViewModel
+
+<div b-gx69rlccnc class="container">
+    <main b-gx69rlccnc role="main" class="pb-3">
+      
+        @foreach (Image image in Model.Images)
+        {
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="bg-light p-4 rounded shadow mb-3" style="margin-bottom: 20px; text-align: center;">
+                        
+                        <a href="/home/viewimage?id=@image.Id">
+                            <h4>@image.Title</h4>
+                        </a>
+                            <h5>Uploaded at: @image.Date</h5>
+                        <a href="/home/viewimage?imageId=@image.Id">
+                            <img style="width: 400px;" src="/uploads/@image.ImageFile" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </main>
+</div>

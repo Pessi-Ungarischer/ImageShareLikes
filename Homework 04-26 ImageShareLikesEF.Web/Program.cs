@@ -9,9 +9,8 @@ namespace ImageShareLikes.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //does this need to be fixed?
+           
             builder.Services.AddAuthentication(CookieScheme)
-            //builder.Services.ImageShareLikes(CookieScheme)
              .AddCookie(CookieScheme, options =>
              {
                  options.LoginPath = "/account/logIn";
